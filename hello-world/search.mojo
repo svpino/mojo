@@ -1,11 +1,10 @@
 from time import now
 from collections import List
 
-
-fn binary_search(arr : List[Int16], x : Int16) -> Int16:
-    var low = 0
-    var high = len(arr) - 1
-    var mid = 0
+def binary_search(arr : List[Int32], x : Int32) -> Int32:
+    low = 0
+    high = len(arr) - 1
+    mid = 0
 
     while low <= high:
         mid = (high + low) // 2
@@ -23,13 +22,17 @@ fn binary_search(arr : List[Int16], x : Int16) -> Int16:
 def main():
     n = 1_000_000
 
-    arr = List[Int16]()
+    arr = List[Int32]()
     for i in range(n):
         arr.append(i)
+
+    results = List[Int32]()
 
     t = now()
 
     for i in range(n):
-        r = binary_search(arr, i)
+        results.append(binary_search(arr, i))
 
-    print((now() - t) / 1e6 , "ms")
+    print((now() - t) / 1e6, "ms")
+
+    print("Results: ", len(results))

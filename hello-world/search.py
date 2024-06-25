@@ -26,12 +26,16 @@ def main():
     for i in range(n):
         arr.append(i)
 
+    results = []
+
     t = time()
 
     for i in range(n):
-        binary_search(arr, i)
+        results.append(binary_search(arr, i))
 
     print((time() - t) * 1000, "ms")
+
+    print("Results: ", len(results))
 
 
 main()
